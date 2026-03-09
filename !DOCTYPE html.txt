@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">
+        <h1>You've been hacked!</h1>
+        <p>You've lost access to everything on this phone and it will reset to factory settings in 10 seconds.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Disable user interaction
+            document.body.style.pointerEvents = 'none';
+
+            // Show the message for 10 seconds
+            setTimeout(function() {
+                document.body.style.pointerEvents = 'auto';
+                window.location.href = 'about:blank';
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
